@@ -1,0 +1,16 @@
+.pnpm-store/
+.data/
+.VSCodeCounter/
+.vscode
+.cache/
+node/.config
+node/.devcontainer
+node/.ssh
+node/.vscode-server
+node/.gitconfig
+\~/*
+**/.oh-my-zsh/**
+**/~/*
+minio/**
+postgresql/**
+node_modules/
