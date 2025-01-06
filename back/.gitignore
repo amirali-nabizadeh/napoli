@@ -1,7 +1,9 @@
 # compiled output
 /dist
 /node_modules
-/build
+
+#libs
+libs/
 
 # Logs
 logs
@@ -12,45 +14,21 @@ yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
 
-# OS
-.DS_Store
+# cache
+.pnpm-store/
 
-# Tests
-/coverage
-/.nyc_output
+# for example 
+example/
 
-# IDEs and editors
-/.idea
-.project
-.classpath
-.c9/
-*.launch
-.settings/
-*.sublime-workspace
+# for counting code 
+.VSCodeCounter/
 
-# IDE - VSCode
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
+# for relp history 
+.nestjs_repl_history
+.clinic
 
-# dotenv environment variable files
-.env
-.env.development.local
-.env.test.local
-.env.production.local
-.env.local
+# cache directory
+.cache/
+.e2e/
 
-# temp directory
-.temp
-.tmp
-
-# Runtime data
-pids
-*.pid
-*.seed
-*.pid.lock
-
-# Diagnostic reports (https://nodejs.org/api/report.html)
-report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+problems/
