@@ -1,12 +1,28 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { AuthService } from './Services/auth.service';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'front';
+    // User Status
+    isLoggedIn!: boolean;
+    constructor(private authService : AuthService){
+
+    }
+
+    ngOnInit(): void {
+      this.isLoggedIn = !!this.authService.getToken();
+    }
+
+  //Method to
+  getUserName() {
+    return this.authService.getUser();
+  }
+    //Method to logout
+    signOut() {
+      this.authService.signOut();
+    }
 }
