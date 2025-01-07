@@ -22,21 +22,10 @@ button {
   outline: none;
   cursor: pointer;
 }
-/* ==== CONTAINER ==== */
-.container {
-  width: 100%;
-  margin-top: 20px;
-}
-@media screen and (min-width: 1040px) {
-  .container {
-    width: 1040px;
-    margin-top: 20px;
-  }
-}
+
 /* ==== HEADER ==== */
 .header {
   height: var(--fixed-header-height);
-  padding: 0 1.7rem;
 }
 
 /* ==== NAV ==== */
