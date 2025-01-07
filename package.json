@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/amirali-nabizadeh/napoli#readme",
   "dependencies": {
+    "bootstrap": "^5.3.3",
     "pnpm": "^9.15.3"
   }
 }
