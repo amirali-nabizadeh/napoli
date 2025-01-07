@@ -1,0 +1,25 @@
+{
+  "name": "napoli",
+  "version": "1.0.0",
+  "description": "test project for school ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amirali-nabizadeh/napoli.git"
+  },
+  "keywords": [
+    "napoli"
+  ],
+  "author": "se kale pook",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amirali-nabizadeh/napoli/issues"
+  },
+  "homepage": "https://github.com/amirali-nabizadeh/napoli#readme",
+  "dependencies": {
+    "pnpm": "^9.15.3"
+  }
+}

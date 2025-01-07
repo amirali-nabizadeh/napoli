@@ -1,0 +1,34 @@
+# compiled output
+/dist
+/node_modules
+
+#libs
+libs/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# cache
+.pnpm-store/
+
+# for example 
+example/
+
+# for counting code 
+.VSCodeCounter/
+
+# for relp history 
+.nestjs_repl_history
+.clinic
+
+# cache directory
+.cache/
+.e2e/
+
+problems/
