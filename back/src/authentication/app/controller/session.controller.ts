@@ -8,6 +8,7 @@ export class SessionController {
 
   @Post()
   login(@Body() data: LoginUserDto) {
+    console.log('hjeel');
     return this.sessionService.login(data);
   }
 }
