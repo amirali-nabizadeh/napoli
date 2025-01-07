@@ -7,7 +7,7 @@ COPY package*.json ./
 RUN npm install
 
 COPY . .
-RUN node --max-old-space-size=4096 $(which npm) run build
+RUN npm run build
 # ENTRYPOINT [ "npm", "run", "dev" ]
 # CMD [ "npm", "run", "dev" ]
 
