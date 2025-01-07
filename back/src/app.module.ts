@@ -1,14 +1,14 @@
 import { Module } from '@nestjs/common';
-import { AuthorizationModule } from './authorization/authorization.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { TypeOrmConfigService } from './data.source';
+import { AuthenticationModule } from './authentication/authentication.module';
 
 @Module({
   imports: [
     TypeOrmModule.forRootAsync({
       useClass: TypeOrmConfigService,
     }),
-    AuthorizationModule,
+    AuthenticationModule,
   ],
   controllers: [],
   providers: [],

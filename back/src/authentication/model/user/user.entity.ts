@@ -1,6 +1,11 @@
 import { Entity, Column, ManyToMany } from 'typeorm';
-import { Group } from '../group/group.entity';
 import { TypeormEntity } from 'src/libs/typeorm/typeorm.entity';
+ enum GroupsEnum {
+  admin = 'admin',
+  student = 'student',
+  teacher = 'teacher',
+  parent = 'parent'
+ }
 
 @Entity()
 export class User extends TypeormEntity {
@@ -11,8 +16,11 @@ export class User extends TypeormEntity {
   lastname: string;
 
   @Column()
-  mobileNumber: string;
+  email: string;
 
-  @ManyToMany(() => Group, (group) => group.user, { cascade: true })
-  group: Group;
+  @Column()
+  password: string;
+
+  @Column({ enum: GroupsEnum })
+  group: GroupsEnum;
 }

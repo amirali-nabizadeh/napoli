@@ -12,10 +12,14 @@ export class UserRepositorySerive extends TypeormRepositoryService<User> {
   }
 
   findById(id: number) {
-    this.repos.findBy({ id });
+    return this.repos.findBy({ id });
+  }
+
+  findByEmail(email: string) {
+    return this.repos.findBy({ email });
   }
 
   delete(id: number) {
-    this.repos.delete({ id: id });
+    return this.repos.delete({ id: id });
   }
 }
