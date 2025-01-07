@@ -1,0 +1,10 @@
+p {
+  font-weight: bold;
+}
+
+footer {
+  max-width: none;
+  max-height: none;
+  position: absolute;
+  bottom: 0;
+}

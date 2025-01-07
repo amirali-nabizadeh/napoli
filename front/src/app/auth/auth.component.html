@@ -1,0 +1,38 @@
+<div class="overflow-hidden primediv">
+  <div class="row justify-content-center secondDiv">
+    <div class="col-12 col-sm-21 col-md-6 form">
+      <ul class="nav nav-tabs justify-content-center ss remove-list-line">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            [class.active]="selectedTab === 'login'"
+            (click)="selectTab('login')"
+          >
+            <i class="bi bi-door-open-fill"></i>
+            ورود
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            [class.active]="selectedTab === 'signup'"
+            (click)="selectTab('signup')"
+          >
+            <i class="bi bi-door-closed-fill"></i>
+            ثبت نام
+          </a>
+        </li>
+      </ul>
+
+      <div class="form-container">
+        <div *ngIf="selectedTab === 'login'" class="mt-4">
+          <app-login-user></app-login-user>
+        </div>
+
+        <div *ngIf="selectedTab === 'signup'" class="mt-4">
+          <app-signup-user></app-signup-user>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
