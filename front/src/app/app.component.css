@@ -26,6 +26,9 @@ button {
 /* ==== HEADER ==== */
 .header {
   height: var(--fixed-header-height);
+  padding-top: 1rem;
+  border-bottom: 1px groove black;
+
 }
 
 /* ==== NAV ==== */
@@ -49,9 +52,6 @@ button {
 .nav_menu_list .nav_menu_item {
   margin: 0 2rem;
 }
-li.active{
-  color: red;
-}
 .nav_menu_item .nav_menu_link {
   font-size: 16.5px;
   line-height: 27px;
@@ -59,9 +59,7 @@ li.active{
   text-transform: capitalize;
   letter-spacing: 0.5px;
 }
-.nav_menu_link:hover {
-  color: var(--primary-color);
-}
+
 .toggle_btn {
   font-size: 20px;
   font-weight: 600;

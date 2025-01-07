@@ -1,37 +1,24 @@
-<header class="container header">
+<header class="container ">
   <!-- ==== NAVBAR ==== -->
-  <nav class="nav">
-    <div class="logo">
-      <h2 routerLink="/Home" style="cursor: pointer;">ناپولی</h2>
-    </div>
-
-    <div class="nav_menu" id="nav_menu">
-      <button class="close_btn" id="close_btn">
-        <i class="ri-close-fill"></i>
-      </button>
-
-      <ul class="nav_menu_list">
-        <li class="nav_menu_item" routerLinkActive="active" *ngIf="isLoggedIn">
-          <a routerLink="/User" class="nav_menu_link">User</a>
-        </li>
-        <li class="nav_menu_item" routerLinkActive="active" *ngIf="isLoggedIn">
-          <a routerLink="/Admin" class="nav_menu_link">Admin</a>
-        </li>
-        <li class="nav_menu_item" *ngIf="isLoggedIn" style="cursor: pointer;">
-          <a (click)="signOut()" class="nav_menu_link">LogOut</a>
-        </li>
-        <li class="nav_menu_item" routerLinkActive="active" *ngIf="!isLoggedIn">
-          <a routerLink="/SignIn" class="nav_menu_link">ورود</a>
-        </li>
-        <li class="nav_menu_item" routerLinkActive="active" *ngIf="!isLoggedIn">
-          <a routerLink="/SignUp" class="nav_menu_link">ثبت نام</a>
-        </li>
-        <li class="nav_menu_item" *ngIf="isLoggedIn">
-          <p class="toggle_btn">
-            {{getUserName()}}
-          </p>
+  <nav dir="rtl" class="d-flex navbar navbar-expand-lg navbar-light mt-3 px-3 bg-light">
+    <a class="navbar-brand" href="#">هنرستان سما</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse justify-content-between navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/about_us">درباره ما <span class="sr-only">(current)</span></a>
         </li>
       </ul>
+      <div class="d-flex">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/SignIn" *ngIf="!isLoggedIn">ورود<span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+      </div>
     </div>
   </nav>
 </header>
