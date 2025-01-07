@@ -1,0 +1,47 @@
+services:
+  front:
+    image: front
+    build:
+      context: ./front
+    ports:
+      - "80:80"
+    volumes:
+      - ./front:/usr/src/app
+    restart: always
+    networks:
+      - napoli-network
+    depends_on:
+      - back
+
+  back:
+    image: back
+    build:
+      context: ./back
+    volumes:
+      - ./back:/use/src/app
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - napoli-network
+    restart: on-failure
+
+  db:
+    image: postgres:17.2-alpine3.21
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: amirali0448v
+      POSTGRES_DB: postgres
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+    networks:
+      - napoli-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+networks:
+  napoli-network:
+    driver: bridge
