@@ -1,0 +1,56 @@
+<div class="primeDiv">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="sidebar">
+          <div class="button-column">
+            <button
+              type="button"
+              class="btn btn-primary btn-block btn4"
+              (click)="toUserInfo()"
+            >
+              حساب کاربری
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary btn-block btn1"
+              [ngClass]="{ hidden: isAdmin }"
+              (click)="showForm()"
+            >
+              ثبت درخواست
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary btn-block btn5"
+              [ngClass]="{ hidden: isAdmin }"
+              (click)="showMyForms()"
+            >
+              مشاهده درخواست های من
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary btn-block btn2"
+              [ngClass]="{ hidden: !isAdmin }"
+              (click)="showTable()"
+            >
+              بررسی غیبت ها
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary btn-block btn3"
+              (click)="navigateToHome()"
+            >
+              خروج
+            </button>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="showForm1">
+        <app-form></app-form>
+      </div>
+      <div *ngIf="showTable1">
+        <app-table></app-table>
+      </div>
+    </div>
+  </div>
+</div>
