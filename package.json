@@ -8,7 +8,7 @@
     "up":"docker compose up -d",
     "down":"docker compose down -v",
     "back":"docker logs -f napoli-back-1",
-    "front":"docker logs -f napoli-back-1"
+    "front":"docker logs -f napoli-front-1"
   },
   "repository": {
     "type": "git",
