@@ -1,12 +1,13 @@
 services:
   front:
+    # command: /bin/sh -c "while sleep 5000000; do :; done"
     image: front
     build:
       context: ./front
     ports:
-      - "80:80"
+      - "4200:4200"
     volumes:
-      - ./front:/usr/src/app
+      - ./front:/app
     restart: always
     networks:
       - napoli-network
@@ -17,11 +18,15 @@ services:
     image: back
     build:
       context: ./back
+    ports:
+      - "3000:3000"
     volumes:
       - ./back:/use/src/app
     depends_on:
       db:
         condition: service_healthy
+    environment:
+      - JWT_SECRETS: fafafa_1911725362!@#_wow!@WECJKBD
     networks:
       - napoli-network
     restart: on-failure
