@@ -1,0 +1,60 @@
+.sosialMedia {
+  align-items: center;
+  background-color: #3b71ca;
+  color: white;
+  border-radius: 8px;
+  box-shadow: 0 0.5rem 1.5rem rgba(22, 28, 45, 0.1);
+  margin: 2rem;
+  padding: 1rem;
+  width: 35rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.sosialMedia img {
+  height: 6rem;
+  width: 6rem;
+  margin-bottom: 10px; 
+}
+
+.sosialMedia p {
+  font-size: 1.2rem;
+}
+
+.sosial {
+  margin: 20px;
+  display: flex;
+  border-radius: 8px;
+  width: 100%;
+  height: 400px;
+}
+
+.inside {
+  margin: 20px;
+  display: flex;
+  border-radius: 8px;
+  width: 100%;
+  height: 600px;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.inside form {
+  align-items: center;
+  background-color: #cef9ff;
+  border-radius: 8px;
+  box-shadow: 0 0.5rem 1.5rem rgba(22, 28, 45, 0.1);
+  margin: 2rem;
+  padding: 1rem;
+  width: 35rem;
+  height: 30rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.inside img {
+  border-radius: 8px;
+  width: 35rem;
+  height: 30rem;
+}

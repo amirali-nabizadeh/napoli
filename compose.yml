@@ -26,7 +26,7 @@ services:
       db:
         condition: service_healthy
     environment:
-      - JWT_SECRETS: fafafa_1911725362!@#_wow!@WECJKBD
+       JWT_SECRETS: fafafa_1911725362!@#_wow!@WECJKBD
     networks:
       - napoli-network
     restart: on-failure

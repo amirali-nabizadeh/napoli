@@ -8,6 +8,7 @@ import { UserComponent } from './Components/user/user.component';
 import { AdminComponent } from './Components/admin/admin.component';
 import { AuthGuard } from './Guards/auth.guard';
 import { AboutUsComponent } from './Components/about-us/about-us.component';
+import { ContactUsComponent } from './Components/contact-us/contact-us.component';
 
 const routes: Routes = [
   {
@@ -25,7 +26,7 @@ const routes: Routes = [
     component: UserComponent,
     canActivate: [AuthGuard],
     data: {
-      role: ['User','Admin'],
+      role: ['User', 'Admin'],
     },
   },
   {
@@ -41,8 +42,14 @@ const routes: Routes = [
     component: AboutUsComponent,
     canActivate: [SecureInnerPagesGuard],
     data: {
-      role: ['User', 'Admin']
-    }
+      role: ['User', 'Admin'],
+    },
+  },
+  {
+    path: 'contact_us',
+    component: ContactUsComponent,
+    canActivate: [SecureInnerPagesGuard],
+    data: { role: ['User', 'admin'] },
   },
 
   { path: 'Home', component: HomeComponent },
