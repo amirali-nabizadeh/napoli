@@ -1,11 +1,11 @@
-import { Entity, Column, ManyToMany } from 'typeorm';
+import { Entity, Column } from 'typeorm';
 import { TypeormEntity } from 'src/libs/typeorm/typeorm.entity';
- enum GroupsEnum {
+export enum GroupsEnum {
   admin = 'admin',
   student = 'student',
   teacher = 'teacher',
-  parent = 'parent'
- }
+  parent = 'parent',
+}
 
 @Entity()
 export class User extends TypeormEntity {
@@ -15,8 +15,11 @@ export class User extends TypeormEntity {
   @Column()
   lastname: string;
 
-  @Column()
+  @Column({ unique: true })
   email: string;
+
+  @Column({ unique: true })
+  username: string;
 
   @Column()
   password: string;

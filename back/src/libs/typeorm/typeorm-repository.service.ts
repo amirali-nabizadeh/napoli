@@ -9,7 +9,7 @@ export abstract class TypeormRepositoryService<entity extends TypeormEntity> {
   }
 
   create(data: entity) {
-    return this.repo.save(data);
+    return this.repo.save(data as any);
   }
 
   update(data: DeepPartial<entity>) {

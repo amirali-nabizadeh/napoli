@@ -1,6 +1,6 @@
-import { Body, Controller, Delete, Get, Post, Query } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common';
+import { SignupDto } from 'src/authentication/model/user/dto/signup.dto';
 import { UserRepositorySerive } from 'src/authentication/model/user/user-repository.service';
-import { User } from 'src/authentication/model/user/user.entity';
 
 @Controller('user')
 export class UserController {
@@ -11,17 +11,17 @@ export class UserController {
   }
 
   @Get(':id')
-  findByid(@Query('id') id: number) {
+  findByid(@Param('id') id: number) {
     return this.repo.findById(id);
   }
 
   @Post()
-  create(@Body() data: User) {
+  create(@Body() data: SignupDto) {
     return this.repo.create(data);
   }
 
   @Delete(':id')
-  delete(@Query('id') id: number) {
-    this.repo.delete(id);
+  delete(@Param('id') id: number) {
+    return this.repo.delete(id);
   }
 }
