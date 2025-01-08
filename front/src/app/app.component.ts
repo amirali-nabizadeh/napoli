@@ -7,7 +7,7 @@ import { AuthService } from './Services/auth.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-    // User Status
+    isBtnActive!:boolean
     isLoggedIn!: boolean;
     constructor(private authService : AuthService){
 

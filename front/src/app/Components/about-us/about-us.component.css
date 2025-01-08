@@ -1,0 +1,21 @@
+.value {
+  width: 413px;
+  height: 372px;
+  border: 1px solid #DEDFDF;
+  border-radius: 1rem;
+  padding: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.value:hover {
+    border: 2px #3b71ca solid;
+  }
+
+  .img{
+
+    max-width: 200px;
+  }

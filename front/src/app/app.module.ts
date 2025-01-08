@@ -19,6 +19,7 @@ import { AdminComponent } from './Components/admin/admin.component';
 import { AuthService } from './Services/auth.service';
 import { HomeComponent } from './Components/home/home.component';
 import { ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/material/core';
+import { AboutUsComponent } from './Components/about-us/about-us.component';
 
 export function tokenGetter() {
   return sessionStorage.getItem("TOKEN_KEY");
@@ -31,7 +32,8 @@ export function tokenGetter() {
     RegisterComponent,
     UserComponent,
     AdminComponent,
-    HomeComponent
+    HomeComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,

@@ -5,14 +5,14 @@ export abstract class TypeormRepositoryService<entity extends TypeormEntity> {
   constructor(private readonly repo: Repository<entity>) {}
 
   getAll() {
-    this.repo.find();
+    return this.repo.find();
   }
 
   create(data: entity) {
-    this.repo.save(data);
+    return this.repo.save(data as any);
   }
 
   update(data: DeepPartial<entity>) {
-    this.repo.save(data);
+    return this.repo.save(data);
   }
 }
