@@ -8,8 +8,8 @@ export abstract class TypeormRepositoryService<entity extends TypeormEntity> {
     return this.repo.find();
   }
 
-  create(data: entity) {
-    return this.repo.save(data as any);
+  create(data) {
+    return this.repo.save(data);
   }
 
   update(data: DeepPartial<entity>) {
