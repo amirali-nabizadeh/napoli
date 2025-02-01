@@ -1,10 +1,10 @@
 import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common';
 import { SignupDto } from 'src/authentication/model/user/dto/signup.dto';
-import { UserRepositorySerive } from 'src/authentication/model/user/user-repository.service';
+import { UserRepositoryService } from 'src/authentication/model/user/user-repository.service';
 
 @Controller('user')
 export class UserController {
-  constructor(private readonly repo: UserRepositorySerive) {}
+  constructor(private readonly repo: UserRepositoryService) {}
   @Get()
   findAll() {
     return this.repo.getAll();

@@ -1,12 +1,17 @@
 import { User } from 'src/authentication/model/user/user.entity';
-import { TypeormEntity } from 'src/libs/typeorm/typeorm.entity';
-import { Column, JoinColumn, ManyToOne } from 'typeorm';
+import { TypeormRealEntity } from 'src/libs/ORM/typeorm-real-entity/typeorm-real.entity';
+import { SCHEMA_NAME } from 'src/site-management/schema-name';
+import { Column, Entity, JoinColumn, ManyToOne } from 'typeorm';
 export enum TodoStateEnum {
   done = 'done',
   todo = 'todo',
 }
 
-export class Todo extends TypeormEntity {
+@Entity({
+  // schema: SCHEMA_NAME,
+})
+export class Todo extends TypeormRealEntity {
+  static override modelLabel: string = 'تسک ها';
   @Column()
   subject: string;
 

@@ -1,5 +1,5 @@
-import { IsEmail, IsEnum, IsNotEmpty } from 'class-validator';
-import { GroupsEnum } from '../user.entity';
+import { IsEmail, IsNotEmpty } from 'class-validator';
+// import { GroupsEnum } from '../user.entity';
 
 export class SignupDto {
   @IsNotEmpty()
@@ -15,9 +15,9 @@ export class SignupDto {
   @IsNotEmpty()
   lastname: string;
 
-  @IsNotEmpty()
-  @IsEnum(GroupsEnum)
-  group: GroupsEnum;
+  // @IsNotEmpty()
+  // @IsEnum(GroupsEnum)
+  // group: GroupsEnum;
 
   @IsNotEmpty()
   password: string;

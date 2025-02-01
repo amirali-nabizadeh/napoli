@@ -1,8 +1,12 @@
-import { TypeormEntity } from 'src/libs/typeorm/typeorm.entity';
+import { TypeormRealEntity } from 'src/libs/ORM/typeorm-real-entity/typeorm-real.entity';
+import { SCHEMA_NAME } from 'src/site-management/schema-name';
 import { Column, Entity } from 'typeorm';
 
-@Entity()
-export class ContactRequest extends TypeormEntity {
+@Entity({
+  // schema: SCHEMA_NAME,
+})
+export class ContactRequest extends TypeormRealEntity {
+  static override modelLabel: string = 'درخواست تماس';
   @Column()
   subject: string;
 

@@ -1,5 +1,5 @@
 import { Repository } from 'typeorm';
-import { TypeormRepositoryService } from 'src/libs/typeorm/typeorm-repository.service';
+import { TypeormRepositoryService } from 'src/libs/ORM/typeorm/typeorm-repository.service';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Group } from './group.entity';
 

@@ -1,13 +1,13 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { LoginUserDto } from 'src/authentication/model/user/dto/login.dto';
-import { UserRepositorySerive } from 'src/authentication/model/user/user-repository.service';
+import { UserRepositoryService } from 'src/authentication/model/user/user-repository.service';
 import { AuthService } from './auth.service';
 import { JwtService } from '@nestjs/jwt';
 
 @Injectable()
 export class SessionService {
   constructor(
-    private readonly repo: UserRepositorySerive,
+    private readonly repo: UserRepositoryService,
     private readonly passwordService: AuthService,
     private readonly jwtService: JwtService,
   ) {}

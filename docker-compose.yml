@@ -1,6 +1,5 @@
 services:
   front:
-    # command: /bin/sh -c "while sleep 5000000; do :; done"
     image: front
     build:
       context: ./front
@@ -21,7 +20,7 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - ./back:/use/src/app
+      - ./back:/app
     depends_on:
       db:
         condition: service_healthy
@@ -37,8 +36,11 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: amirali0448v
       POSTGRES_DB: postgres
+    ports:
+      - "5432:5432"
     volumes:
-      - ./pgdata:/var/lib/postgresql/data
+      - ./pgdata:/var/lib/postgresql/data    
+    restart: unless-stopped
     networks:
       - napoli-network
     healthcheck:

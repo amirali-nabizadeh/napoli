@@ -1,4 +1,4 @@
-import { TypeormRepositoryService } from 'src/libs/typeorm/typeorm-repository.service';
+import { TypeormRepositoryService } from 'src/libs/ORM/typeorm/typeorm-repository.service';
 import { ContactRequest } from './contact-request.entity';
 import { Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';

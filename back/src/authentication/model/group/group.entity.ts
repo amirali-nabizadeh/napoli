@@ -1,12 +1,18 @@
-import { Column, Entity, ManyToMany } from 'typeorm';
+import { Column, Entity, JoinTable, ManyToMany } from 'typeorm';
 import { User } from '../user/user.entity';
-import { TypeormEntity } from 'src/libs/typeorm/typeorm.entity';
+import { TypeormRealEntity } from 'src/libs/ORM/typeorm-real-entity/typeorm-real.entity';
+import { SCHEMA_NAME } from 'src/authentication/schema-name';
 
-@Entity()
-export class Group extends TypeormEntity {
+@Entity({
+  schema: SCHEMA_NAME,
+})
+export class Group extends TypeormRealEntity {
+  static override modelLabel = 'گروه';
+
   @Column()
   name: string;
 
-  @ManyToMany(() => User, (user) => user.group)
-  user: User;
+  @ManyToMany(() => User, (user) => user.groups)
+  @JoinTable()
+  users?: User[];
 }

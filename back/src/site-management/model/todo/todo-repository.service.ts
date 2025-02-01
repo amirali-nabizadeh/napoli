@@ -1,4 +1,4 @@
-import { TypeormRepositoryService } from 'src/libs/typeorm/typeorm-repository.service';
+import { TypeormRepositoryService } from 'src/libs/ORM/typeorm/typeorm-repository.service';
 import { Repository } from 'typeorm';
 import { Todo } from './todo.entity';
 import { InjectRepository } from '@nestjs/typeorm';

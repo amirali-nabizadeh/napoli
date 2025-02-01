@@ -1,7 +1,9 @@
 import { DeepPartial, Repository } from 'typeorm';
-import { TypeormEntity } from './typeorm.entity';
+import { TypeormRealEntity } from '../typeorm-real-entity/typeorm-real.entity';
 
-export abstract class TypeormRepositoryService<entity extends TypeormEntity> {
+export abstract class TypeormRepositoryService<
+  entity extends TypeormRealEntity,
+> {
   constructor(private readonly repo: Repository<entity>) {}
 
   getAll() {
