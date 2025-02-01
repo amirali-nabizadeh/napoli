@@ -9,6 +9,7 @@ import { Reflector } from '@nestjs/core';
 import { JwtService } from '@nestjs/jwt';
 import { Request } from 'express';
 import { IS_PUBLIC_KEY } from '../decorator/public-api.decorator';
+import { ClsService } from 'nestjs-cls';
 
 @Injectable()
 export class JwtGuard implements CanActivate {
@@ -16,6 +17,7 @@ export class JwtGuard implements CanActivate {
     private jwtService: JwtService,
     private reflector: Reflector,
     private readonly configService: ConfigService,
+    private clsService: ClsService,
   ) {}
 
   async canActivate(context: ExecutionContext): Promise<boolean> {
@@ -23,20 +25,19 @@ export class JwtGuard implements CanActivate {
       context.getHandler(),
       context.getClass(),
     ]);
-    if (isPublic) {
-      return true;
-    }
 
     const request = context.switchToHttp().getRequest();
     const token = this.extractTokenFromHeader(request);
-    if (!token) {
+    if (isPublic) {
+      return true;
+    } else if (!token) {
       throw new UnauthorizedException();
     }
     try {
       const payload = await this.jwtService.verifyAsync(token, {
         secret: this.configService.get('JWT_SECRETS'),
       });
-
+      this.clsService.set('user_provider', payload);
       request['user'] = payload;
     } catch {
       throw new UnauthorizedException();

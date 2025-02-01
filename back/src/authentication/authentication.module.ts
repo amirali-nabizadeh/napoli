@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { User } from './model/user/user.entity';
-import { UserRepositorySerive } from './model/user/user-repository.service';
+import { UserRepositoryService } from './model/user/user-repository.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UserController } from './app/controller/user.controller';
 import { SessionService } from './app/service/session.service';
@@ -27,12 +27,12 @@ import { IsUserNameAlreadyExist } from './app/validator/is-username-already-exis
   ],
   controllers: [UserController, SessionController],
   providers: [
-    UserRepositorySerive,
+    UserRepositoryService,
     SessionService,
     AuthService,
     IsEmailAlreadyExist,
     IsUserNameAlreadyExist,
   ],
-  exports: [UserRepositorySerive, SessionService, AuthService],
+  exports: [UserRepositoryService, SessionService, AuthService],
 })
 export class AuthenticationModule {}

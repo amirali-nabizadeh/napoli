@@ -1,14 +1,13 @@
-import { Entity, Column } from 'typeorm';
-import { TypeormEntity } from 'src/libs/typeorm/typeorm.entity';
-export enum GroupsEnum {
-  admin = 'admin',
-  student = 'student',
-  teacher = 'teacher',
-  parent = 'parent',
-}
+import { Entity, Column, ManyToMany } from 'typeorm';
+import { Group } from '../group/group.entity';
+import { TypeormRealEntity } from 'src/libs/ORM/typeorm-real-entity/typeorm-real.entity';
+import { SCHEMA_NAME } from 'src/authentication/schema-name';
 
-@Entity()
-export class User extends TypeormEntity {
+@Entity({
+  schema: SCHEMA_NAME,
+})
+export class User extends TypeormRealEntity {
+  static override modelLabel = 'کاربر';
   @Column()
   firstname: string;
 
@@ -24,6 +23,9 @@ export class User extends TypeormEntity {
   @Column()
   password: string;
 
-  @Column({ enum: GroupsEnum })
-  group: GroupsEnum;
+  // @Column({ enum: GroupsEnum })
+  // group: GroupsEnum;
+
+  @ManyToMany(() => Group, (group) => group.users)
+  groups?: Group[];
 }

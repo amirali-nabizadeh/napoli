@@ -5,10 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "up":"docker compose up -d",
-    "down":"docker compose down -v",
-    "back":"docker logs -f napoli-back-1",
-    "front":"docker logs -f napoli-front-1"
+    "up:build": "npm run dev$npm_config_old -- up --build -d",
+    "dev":"docker compose -f docker-compose.yml -f docker-compose.devcontainer.yml",
+    "up": "npm run dev$npm_config_old -- up -d",
+    "down": "npm run dev$npm_config_old -- down -v",
+    "back:reset": "npm run reset:db && npm run back",
+    "back":"npm run dev$npm_config_old -- exec back npm run start:debug",
+    "front": "npm run dev$npm_config_old -- exec front npm run start",
+    "reset:db":"sudo rm -rdf ./pgdata && npm run dev$npm_config_old -- restart db"
   },
   "repository": {
     "type": "git",
@@ -17,7 +21,7 @@
   "keywords": [
     "napoli"
   ],
-  "author": "se kale pook",
+  "author": "amirali nabizadeh",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/amirali-nabizadeh/napoli/issues"

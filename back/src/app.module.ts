@@ -4,6 +4,7 @@ import { TypeOrmConfigService } from './data.source';
 import { AuthenticationModule } from './authentication/authentication.module';
 import { ClsModule, ClsService } from 'nestjs-cls';
 import { NestModule } from './libs/nest/nest.module';
+import { SiteManagementModule } from './site-management/site-management.module';
 
 @Module({
   imports: [
@@ -13,6 +14,7 @@ import { NestModule } from './libs/nest/nest.module';
     }),
     AuthenticationModule,
     NestModule,
+    SiteManagementModule,
   ],
   controllers: [],
   providers: [],
