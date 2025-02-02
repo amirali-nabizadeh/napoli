@@ -23,8 +23,9 @@ export class SessionService {
       throw new BadRequestException('can not find any user with this data');
     }
     const payload = { sub: currentUser.id, username: currentUser.username };
+    const accessToken = await this.jwtService.signAsync(payload);
     return {
-      access_token: await this.jwtService.signAsync(payload),
+      accessToken,
     };
   }
 }

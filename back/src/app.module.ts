@@ -5,6 +5,7 @@ import { AuthenticationModule } from './authentication/authentication.module';
 import { ClsModule, ClsService } from 'nestjs-cls';
 import { NestModule } from './libs/nest/nest.module';
 import { SiteManagementModule } from './site-management/site-management.module';
+import { CaslModule } from './libs/casl/src/casl.module';
 
 @Module({
   imports: [
@@ -15,6 +16,7 @@ import { SiteManagementModule } from './site-management/site-management.module';
     AuthenticationModule,
     NestModule,
     SiteManagementModule,
+    CaslModule,
   ],
   controllers: [],
   providers: [],
