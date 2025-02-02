@@ -8,7 +8,7 @@ import { User } from 'src/authentication/model/user/user.entity';
 import { USERS } from './data/user.data';
 import { GROUP_USERS_USERS } from './data/group-users-user.data';
 
-export class initialSeed1709538774874 extends Seeder {
+export class InitialSeed99999999999999 extends Seeder {
   constructor() {
     super(
       new Step(Action, ACTIONS),

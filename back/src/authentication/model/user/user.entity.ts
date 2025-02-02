@@ -23,9 +23,6 @@ export class User extends TypeormRealEntity {
   @Column()
   password: string;
 
-  // @Column({ enum: GroupsEnum })
-  // group: GroupsEnum;
-
   @ManyToMany(() => Group, (group) => group.users)
   groups?: Group[];
 }

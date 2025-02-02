@@ -8,7 +8,7 @@ export enum TodoStateEnum {
 }
 
 @Entity({
-  // schema: SCHEMA_NAME,
+  schema: SCHEMA_NAME,
 })
 export class Todo extends TypeormRealEntity {
   static override modelLabel: string = 'تسک ها';

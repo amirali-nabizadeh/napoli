@@ -3,7 +3,7 @@ import { SCHEMA_NAME } from 'src/site-management/schema-name';
 import { Column, Entity } from 'typeorm';
 
 @Entity({
-  // schema: SCHEMA_NAME,
+  schema: SCHEMA_NAME,
 })
 export class ContactRequest extends TypeormRealEntity {
   static override modelLabel: string = 'درخواست تماس';
