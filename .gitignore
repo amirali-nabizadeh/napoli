@@ -11,6 +11,7 @@ node/.gitconfig
 \~/*
 **/.oh-my-zsh/**
 **/~/*
-minio/**
+/minio-data
+/pgdata
 postgresql/**
 node_modules/
